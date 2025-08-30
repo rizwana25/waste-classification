@@ -12,11 +12,15 @@ We use the Multi-class Garbage Classification Dataset from Kaggle:
 https://www.kaggle.com/datasets/vishallazrus/multi-class-garbage-classification-dataset?utm_source=chatgpt.com
 
 The dataset contains images organized in folders by class.
+
 Total classes: 7
+
 Train/Test split is provided.
 
 # Technologies Used
 
 Python
+
 TensorFlow / Keras
+
 NumPy, Pandas, Matplotlib
