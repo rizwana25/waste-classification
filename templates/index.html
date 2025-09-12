@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort - AI-Powered Waste Classifier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f9f0 0%, #e8f4e6 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #4CAF50;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2E7D32;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #2E7D32;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            color: #558B2F;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .hero-text h2 {
+            font-size: 2.2rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            color: #558B2F;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .button i {
+            margin-left: 10px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #558B2F;
+            margin-top: 60px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-leaf logo-icon"></i>
+                <div class="logo-text">EcoSort</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>Smart Waste Classification for a Greener Planet</h1>
+            <p>Use AI technology to properly sort your waste and contribute to environmental sustainability</p>
+            
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Why Proper Waste Sorting Matters</h2>
+                    <p>Every year, millions of tons of recyclable waste end up in landfills due to improper sorting. This not only wastes valuable resources but also contributes to environmental pollution.</p>
+                    <p>With EcoSort, you can quickly and accurately classify your waste items, ensuring they're disposed of correctly and can be recycled whenever possible.</p>
+                    <a href="{{ url_for('classify_page') }}" class="button">Classify Your Waste <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Eco-friendly waste sorting">
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h3>AI-Powered</h3>
+                <p>Our advanced machine learning model accurately classifies waste into categories with high precision.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h3>Instant Results</h3>
+                <p>Get classification results in seconds - just upload an image and let our AI do the work.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Friendly</h3>
+                <p>Use EcoSort on any device - perfect for classifying waste on the go.</p>
+            </div>
+        </section>
+        
+        <section class="stats">
+            <div class="stat-item">
+                <h3>95%</h3>
+                <p>Classification Accuracy</p>
+            </div>
+            <div class="stat-item">
+                <h3>10K+</h3>
+                <p>Waste Items Classified</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Eco-Friendly</p>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <h2>Ready to Classify Your Waste?</h2>
+            <a href="{{ url_for('classify_page') }}" class="button">Get Started Now <i class="fas fa-play-circle"></i></a>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 EcoSort - AI Waste Classifier. All rights reserved.</p>
+            <p>Help us make the planet greener, one waste item at a time.</p>
+        </footer>
+    </div>
+</body>
+</html>
