@@ -1,4 +1,6 @@
-Flask==2.3.3
+tensorflow==2.20.0
+flask
+pillow
+numpy
+gunicorn
 
-tflite-runtime==2.14.0
-numpy==1.26.1
