@@ -27,17 +27,25 @@
         }
         
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    display: flex;
+    justify-content: center; /* Center everything horizontally */
+    align-items: center;
+    padding: 20px 0;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Reduced margin since nav is removed */
+}
+
+/* Completely remove the navigation */
+nav {
+    display: none;
+}
         
         .logo-icon {
             font-size: 2.5rem;
@@ -48,24 +56,13 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: #2E7D32;
+            align-content: center;
         }
         
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+       
         
-        nav a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
         
-        nav a:hover {
-            color: #2E7D32;
-        }
+        
         
         .hero {
             display: flex;
@@ -262,14 +259,7 @@
                 <i class="fas fa-leaf logo-icon"></i>
                 <div class="logo-text">EcoSort</div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            
         </header>
         
         <section class="hero">
@@ -307,20 +297,6 @@
             </div>
         </section>
         
-        <section class="stats">
-            <div class="stat-item">
-                <h3>95%</h3>
-                <p>Classification Accuracy</p>
-            </div>
-            <div class="stat-item">
-                <h3>10K+</h3>
-                <p>Waste Items Classified</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Eco-Friendly</p>
-            </div>
-        </section>
         
         <section class="cta">
             <h2>Ready to Classify Your Waste?</h2>
@@ -328,7 +304,7 @@
         </section>
         
         <footer>
-            <p>&copy; 2023 EcoSort - AI Waste Classifier. All rights reserved.</p>
+            <p>&copy; 2025 EcoSort - AI Waste Classifier. All rights reserved.</p>
             <p>Help us make the planet greener, one waste item at a time.</p>
         </footer>
     </div>
