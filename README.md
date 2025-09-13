@@ -107,12 +107,13 @@ This project is released under the MIT License.
 
 ## 👩‍💻 Author
 
-Developed by **\[Your Name]**.
+Developed by **\[Fathimath Rizwana]**.
 Contributions are welcome! 🚀
 
 ```
 
 ---
+<img width="1920" height="859" alt="ecosort1" src="https://github.com/user-attachments/assets/8d7e9e87-2874-4f9c-ad73-f2f0c10882d8" />
+<img width="1920" height="859" alt="ecosort2" src="https://github.com/user-attachments/assets/e807e799-dbd1-448d-b333-279cb9a39502" />
 
-Would you like me to also add **screenshots/gif placeholders** (for the homepage, classify page, and predictions) in this README so it looks even more polished on GitHub?
 ```
