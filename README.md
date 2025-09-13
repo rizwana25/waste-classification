@@ -110,7 +110,7 @@ This project is released under the MIT License.
 Developed by **\[Fathimath Rizwana]**.
 Contributions are welcome! 🚀
 
-```
+
 
 ---
 <img width="1920" height="859" alt="ecosort1" src="https://github.com/user-attachments/assets/8d7e9e87-2874-4f9c-ad73-f2f0c10882d8" />
