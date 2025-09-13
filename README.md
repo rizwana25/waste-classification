@@ -1,5 +1,5 @@
 
-# 🗑️ Waste Classification using Deep Learning
+# 🗑️ Waste Classification using Machine Learning
 
 This project is a **Flask web application** that classifies waste images into categories such as cardboard, compost, glass, metal, paper, plastic, and trash. It uses a **TensorFlow Lite model** for lightweight, efficient inference and is deployed on **Render**.  
 
