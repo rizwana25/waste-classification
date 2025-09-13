@@ -37,7 +37,7 @@ We use the **[Multi-class Garbage Classification Dataset](https://www.kaggle.com
    ```bash
    git clone https://github.com/yourusername/waste-classification.git
    cd waste-classification
-````
+
 
 2. Create and activate a virtual environment:
 
